@@ -39,7 +39,7 @@ async def en_yakın():
 
     closestDate:str = list(calendar.keys())[0]
     data:str = calendar[closestDate]
-    data["date"] = closestDate
+    data["tarih"] = closestDate
     return data
 
 
@@ -49,7 +49,6 @@ async def gün(tarih: str = Query(enum=list(calendar.keys()))):
         return calendar[tarih]
     except KeyError:
         return {"error": "No content for this date or meal."}
-
 
 
 @app.get(path="/meal/", description="Get chosen day's chosen meal with query parameters. Will return error message if chosen meal is not available.")
