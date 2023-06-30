@@ -58,8 +58,10 @@ async def yemek(tarih:str=Query(enum=list(calendar.keys())), yemek:str=Query(enu
     except KeyError:
         return {"error": "No content for this date or meal."}
     
-    
-for day in calendar:
-    @app.get(path=f"/{day}/", description="Get chosen day's content.")
-    async def gün():
-        return calendar[day]
+
+# delete comment if you want to get days without query parameters
+
+# for day in calendar:
+#     @app.get(path=f"/{day}/", description="Get chosen day's content.")
+#     async def gün():
+#         return calendar[day]
