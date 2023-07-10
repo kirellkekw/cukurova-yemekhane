@@ -12,59 +12,36 @@ calendar = jsonpickle.decode(r)
 
 app = FastAPI()
 
-
 @app.get(path="/", description="Get root tree of the API.")
 async def root():
     return calendar
 
+@app.get(path="/day/{day}")
+async def day(day: str):
+    try:
+        return calendar[day]
+    except KeyError:
+        return {"error": "No content for this date or meal."}
 
 @app.get(path="/today/", description="Get today's content. Will return error message if there is no content for today.")
-async def bugün():
+async def today():
     today = datetime.date.today().strftime("%d.%m.%Y")
     try:
         return calendar[today]
     except KeyError:
         return {"error": "No content for today."}
 
-
 @app.get(path="/tomorrow/", description="Get tomorrow's content. Will return error message if there is no content for tomorrow.")
-async def yarın():
+async def tomorrow():
     tomorrow = (datetime.date.today() + datetime.timedelta(days=1)).strftime("%d.%m.%Y")
     try:
         return calendar[tomorrow]
     except KeyError:
         return {"error": "No content for tomorrow."}
     
-    
 @app.get(path="/closest/", description="Get closest day's content. Will return content with date included.")
-async def en_yakın_gün():
-    closestDate:str = list(calendar.keys())[0]
-    data:str = calendar[closestDate]
-    data["date"] = closestDate
+async def closest_day():
+    closestDay:str = list(calendar.keys())[0]
+    data:str = calendar[closestDay]
+    data["date"] = closestDay
     return data
-
-
-@app.get(path="/date/", description="Get chosen day's content with query parameter.")
-async def gün(date: str = Query(enum=list(calendar.keys()))):
-    try:
-        return calendar[date]
-    except KeyError:
-        return {"error": "No content for this date or meal."}
-
-
-@app.get(path="/meal/", description="Get chosen day's chosen meal with query parameters. Will return error message if chosen meal is not available.")
-async def yemek(date:str=Query(enum=list(calendar.keys())), meal:str=Query(enum=["1", "2", "3", "4"])):
-    try:
-        return calendar[date][f"yemek{meal}"]
-    except KeyError:
-        return {"error": "No content for this date or meal."}
-    
-
-    
-
-# delete comment if you want to get days without query parameters
-
-# for day in calendar:
-#     @app.get(path=f"/{day}/", description="Get chosen day's content.")
-#     async def gün():
-#         return calendar[day]
