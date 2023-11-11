@@ -1,15 +1,14 @@
-# offline for the time being, will be open soon
+# API for dining hall of Çukurova University. (unofficial)
 
-# cukurova-yemekhane
-An unofficial API interface for dinner hall of Cukurova University.
+## For documentary page:
+http://5.178.111.177:2000/docs#
 
 
-https://cukurova-yemekhane-62c93a0380c7.herokuapp.com/docs#
+## All endpoints:
+http://5.178.111.177:2000/today
 
-https://cukurova-yemekhane-62c93a0380c7.herokuapp.com/today
+http://5.178.111.177:2000/tomorrow
 
-https://cukurova-yemekhane-62c93a0380c7.herokuapp.com/tomorrow
+http://5.178.111.177:2000/closest
 
-https://cukurova-yemekhane-62c93a0380c7.herokuapp.com/closest
-
-https://cukurova-yemekhane-62c93a0380c7.herokuapp.com/{date}
+http://5.178.111.177:2000/{date}
