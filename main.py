@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Query
+from fastapi import FastAPI
 import requests
 import re
 import jsonpickle
@@ -37,8 +37,8 @@ async def tomorrow():
     try:
         return calendar[tomorrow]
     except KeyError:
-        return {"error": "No content for tomorrow."}
-    
+        return {"error": "No content for tomorrow."} 
+
 @app.get(path="/closest/", description="Get closest day's content. Will return content with date included.")
 async def closest_day():
     closestDay:str = list(calendar.keys())[0]
