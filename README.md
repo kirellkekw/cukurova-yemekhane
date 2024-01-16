@@ -1,3 +1,5 @@
+# CURRENTLY UNDER MAINTENANCE
+
 # API for dining hall of Çukurova University. (unofficial)
 
 ## For documentary page:
