@@ -7,6 +7,6 @@ http://5.178.111.177/cuyemekhane/tomorrow
 
 http://5.178.111.177/cuyemekhane/closest
 
-http://5.178.111.177/cuyemekhane/{date}
+http://5.178.111.177/cuyemekhane/day/{date}
 
 - DD.MM.YYYY format for date endpoint.
