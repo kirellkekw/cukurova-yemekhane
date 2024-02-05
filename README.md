@@ -1,12 +1,12 @@
 # API for dining hall of Çukurova University. (unofficial)
 
 ## All endpoints:
-http://5.178.111.177/cuyemekhane/today
+https://cu-yemek.vercel.app/today
 
-http://5.178.111.177/cuyemekhane/tomorrow
+https://cu-yemek.vercel.app/tomorrow
 
-http://5.178.111.177/cuyemekhane/closest
+https://cu-yemek.vercel.app/closest
 
-http://5.178.111.177/cuyemekhane/day/{date}
+https://cu-yemek.vercel.app/day/{date}
 
-- DD.MM.YYYY format for date endpoint.
+- DD.MM.YYYY format for date endpoint. (03.01.2024, 29.12.2024)
