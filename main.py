@@ -74,7 +74,7 @@ async def get_all_root():
 async def get_by_day(day: str):
     """Endpoint to get content for a specific day, with a shorter path."""
 
-    if day == "{date}":
+    if day == r"{date}":
         return {"error": "Please enter a valid date in /DD.MM.YYYY format." +
                 " Example: /01.01.2024 or /31.12.2024"
                 }
